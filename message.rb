@@ -5,7 +5,7 @@ def message
   url = 'https://slack.com/api/chat.postMessage'
   token = ARGV[0]
 
-  1.upto(100) do |i|
+  1.upto(2) do |i|
     if i % 5 == 0 and i % 3 == 0
       text = "FizzBuzz"
     elsif i % 5 == 0
@@ -19,7 +19,7 @@ def message
     cmd = "curl -X POST -d -URL #{url} -d 'token=#{token}' -d 'chat:write:bot=buzzbot' -d 'channel=fizz' -d'text=#{text}' "
 
     system(cmd) 
-    
+
     sleep 1
     
   end
